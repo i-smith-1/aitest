@@ -1,0 +1,22 @@
+[workspace]
+members = [
+    "sudoku-core",
+    "sudoku-gen",
+    "sudoku-solve",
+    "sudoku-cli",
+    "sudoku-ml",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+authors = ["OpenCode <dev@example.com>"]
+
+[workspace.dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+rand = "0.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"

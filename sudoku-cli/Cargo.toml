@@ -1,0 +1,13 @@
+[package]
+name = "sudoku-cli"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+rand = { workspace = true }
+sudoku-core = { path = "../sudoku-core" }
+sudoku-gen = { path = "../sudoku-gen" }
+sudoku-solve = { path = "../sudoku-solve" }
