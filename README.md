@@ -6,7 +6,7 @@ This workspace implements a general n-by-n "Latin Sudoku" where digits 1..n must
 - Puzzle generator (Latin square + masking with optional uniqueness)
 - Classical solver (MRV backtracking)
 - CLI for generating and solving puzzles
-- ML crate scaffold for a future Transformer (feature-gated)
+- ML crate scaffold for a Burn-based Transformer (feature-gated)
 
 Crates
 - sudoku-core: Board, parsing/printing, constraints and helpers
@@ -23,6 +23,8 @@ Rules and Representation
 CLI
 - Generate: `cargo run -p sudoku-cli -- gen --n 5 --ratio 0.5 --unique`
 - Solve:    `cargo run -p sudoku-cli -- solve --input puzzle.txt`
+  - With transformer (feature-gated, falls back to backtracking if no model):
+    `cargo run -p sudoku-cli --features burn -- solve --method transformer --model path/to/model.bin`
 
 Plan Snapshot
 - Data/modeling (future): sequence of length n*n, tokens 0..n (0 empty). Transformer encoder with token+row+col embeddings. Mask invalid digits during inference. Train on-the-fly generated Latin puzzles.

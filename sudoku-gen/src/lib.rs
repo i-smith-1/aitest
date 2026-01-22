@@ -9,13 +9,13 @@ pub fn gen_solved<R: Rng + ?Sized>(n: usize, rng: &mut R) -> Board {
     let mut b = Board::new(n).expect("n>0");
     for r in 0..n {
         for c in 0..n {
-            let v = ((r + c) % n + 1) as u8;
+            let v = ((r + c) % n + 1) as u32;
             b.cells[r * n + c] = v;
         }
     }
     // random digit permutation
-    let mut perm_digits: Vec<Digit> = (0..=n as u8).collect(); // 0 stays 0
-    let mut digits: Vec<Digit> = (1..=n as u8).collect();
+    let mut perm_digits: Vec<Digit> = (0..=n as u32).collect(); // 0 stays 0
+    let mut digits: Vec<Digit> = (1..=n as u32).collect();
     digits.shuffle(rng);
     for (i, &d) in digits.iter().enumerate() {
         perm_digits[i + 1] = d;

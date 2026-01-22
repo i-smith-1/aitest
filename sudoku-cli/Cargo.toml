@@ -11,3 +11,8 @@ rand = { workspace = true }
 sudoku-core = { path = "../sudoku-core" }
 sudoku-gen = { path = "../sudoku-gen" }
 sudoku-solve = { path = "../sudoku-solve" }
+sudoku-ml = { path = "../sudoku-ml", default-features = false }
+
+[features]
+default = []
+burn = ["sudoku-ml/burn"]

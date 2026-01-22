@@ -20,3 +20,5 @@ rand = "0.8"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 thiserror = "1"
+burn = { version = "0.14", default-features = false }
+burn-ndarray = "0.14"

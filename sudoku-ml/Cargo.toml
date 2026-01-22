@@ -6,7 +6,9 @@ license = "MIT OR Apache-2.0"
 
 [dependencies]
 sudoku-core = { path = "../sudoku-core" }
+burn = { workspace = true, optional = true, default-features = false }
+burn-ndarray = { workspace = true, optional = true }
 
 [features]
 # Placeholder feature to add Burn later without impacting default builds
-burn = []
+burn = ["dep:burn", "dep:burn-ndarray"]
